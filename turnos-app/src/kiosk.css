@@ -1,0 +1,445 @@
+.production-kiosk {
+  background: #f3f2ef;
+  color: #292728;
+}
+.production-kiosk .kiosk-header {
+  height: 88px;
+  background: #fff;
+  border-bottom: 1px solid #e6e2dd;
+}
+.production-kiosk .kiosk-header .quiet-button {
+  background: transparent;
+  box-shadow: none;
+  color: #665e5b;
+}
+.production-kiosk .kiosk-shell {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  gap: 0;
+  width: min(880px, calc(100% - 48px));
+  padding: 40px 0 28px;
+}
+.terminal-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+.terminal-heading .eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  color: #776b66;
+}
+.terminal-heading h1 {
+  margin: 5px 0 0;
+  font-size: 30px;
+  line-height: 1.2;
+  font-weight: 900;
+  letter-spacing: -0.035em;
+}
+.terminal-method {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #6c6059;
+  font-size: 13px;
+}
+.terminal-clock {
+  margin: 28px 0;
+  padding: 22px;
+  text-align: center;
+  border: 1px solid #e5e1db;
+  border-radius: 20px;
+  background: #ffffffb3;
+}
+.terminal-date {
+  display: block;
+  color: #746862;
+  font-size: 14px;
+}
+.terminal-date::first-letter {
+  text-transform: uppercase;
+}
+.terminal-clock time {
+  display: block;
+  margin-top: 3px;
+  font-size: clamp(46px, 7vw, 68px);
+  line-height: 1.15;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.045em;
+}
+.terminal-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+.terminal-action {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  text-align: left;
+  border-radius: 22px;
+  padding: 27px 30px 0;
+  border: 1px solid transparent;
+  font: inherit;
+  cursor: pointer;
+  box-shadow: 0 8px 24px #3b25200a;
+  transition:
+    transform 0.16s,
+    box-shadow 0.16s;
+}
+.terminal-action:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px #3b252019;
+}
+.terminal-action:active {
+  transform: translateY(0);
+}
+.terminal-action:focus-visible,
+.production-kiosk button:focus-visible {
+  outline: 3px solid #bf8441;
+  outline-offset: 5px;
+}
+.terminal-entry {
+  background: #72232d;
+  color: #fff;
+  border-color: #72232d;
+}
+.terminal-exit {
+  background: #fff;
+  color: #3b3230;
+  border-color: #dfd8d1;
+}
+.terminal-action-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+.terminal-action-top > svg {
+  opacity: 0.6;
+}
+.terminal-action-icon {
+  width: 58px;
+  height: 58px;
+  display: grid;
+  place-items: center;
+  border-radius: 17px;
+  background: #ffffff18;
+  border: 1px solid #ffffff25;
+}
+.terminal-exit .terminal-action-icon {
+  background: #f5eee5;
+  color: #87532f;
+  border-color: #ede1d3;
+}
+.terminal-action-name {
+  font-size: 36px;
+  font-weight: 900;
+  line-height: 1.2;
+  letter-spacing: -0.035em;
+}
+.terminal-action-detail {
+  font-size: 14px;
+  margin-top: 5px;
+  margin-bottom: 27px;
+  color: #f0d6d9;
+}
+.terminal-exit .terminal-action-detail {
+  color: #796d66;
+}
+.terminal-action-bottom {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 18px 0;
+  font-size: 13px;
+  font-weight: 700;
+  border-top: 1px solid #ffffff26;
+}
+.terminal-exit .terminal-action-bottom {
+  border-color: #ede6df;
+  color: #76665f;
+}
+.terminal-hint {
+  margin: 23px 0 0;
+  text-align: center;
+  color: #766b65;
+  font-size: 13px;
+}
+.production-kiosk .kiosk-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 20px clamp(24px, 5vw, 72px);
+  font-size: 11px;
+  color: #82766e;
+}
+.production-kiosk .worker-picker {
+  box-shadow: 0 8px 24px #3b25200a;
+}
+.production-kiosk .worker-picker h2 {
+  font-size: 24px;
+}
+.production-kiosk .worker-picker .quiet-button {
+  width: auto;
+  font-size: 13px;
+  margin-top: 12px;
+}
+.production-kiosk .attendance-success-card .quiet-button {
+  width: auto;
+  font-size: 14px;
+}
+@media (max-width: 600px) {
+  .production-kiosk .kiosk-header {
+    height: 72px;
+    padding: 0 20px;
+  }
+  .production-kiosk .kiosk-header .quiet-button {
+    font-size: 12px;
+    width: auto;
+    padding: 0 10px;
+  }
+  .production-kiosk .kiosk-shell {
+    width: calc(100% - 32px);
+    padding-top: 24px;
+  }
+  .terminal-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .terminal-heading h1 {
+    font-size: 27px;
+  }
+  .terminal-clock {
+    margin: 20px 0;
+    padding: 18px 10px;
+  }
+  .terminal-actions {
+    gap: 12px;
+  }
+  .terminal-action {
+    padding: 20px 18px 0;
+    border-radius: 18px;
+  }
+  .terminal-action-top {
+    margin-bottom: 22px;
+  }
+  .terminal-action-icon {
+    width: 46px;
+    height: 46px;
+    border-radius: 13px;
+  }
+  .terminal-action-icon svg {
+    width: 26px;
+  }
+  .terminal-action-top > svg {
+    width: 18px;
+  }
+  .terminal-action-name {
+    font-size: 28px;
+  }
+  .terminal-action-detail {
+    font-size: 12px;
+  }
+  .terminal-action-bottom {
+    font-size: 12px;
+  }
+  .production-kiosk .kiosk-footer {
+    padding: 18px 16px;
+    flex-wrap: wrap;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .terminal-action {
+    transition: none;
+  }
+}
+
+/* El kiosco es la pantalla que se ve todo el día: el logo manda en ella. */
+.production-kiosk .kiosk-header {
+  height: clamp(108px, 9vw, 148px);
+}
+.production-kiosk .kiosk-header .brand-logo {
+  /* Crece con la pantalla del kiosco sin pasar de los 646 px del original:
+     incluso a 190 px y doble densidad se dibuja por debajo de su resolución. */
+  width: clamp(132px, 11vw, 190px);
+}
+.production-kiosk .kiosk-header .brand strong {
+  font-size: clamp(22px, 1.9vw, 28px);
+}
+@media (max-width: 600px) {
+  .production-kiosk .kiosk-header {
+    height: 76px;
+  }
+  .production-kiosk .kiosk-header .brand-logo {
+    width: 88px;
+  }
+}
+
+/* La pantalla de marcación debe caber entera, sin desplazar, en cualquier
+   resolución. Los tamaños se miden también contra el alto de la ventana: en
+   una pantalla baja encogen en vez de empujar el contenido fuera de la vista. */
+.production-kiosk {
+  height: 100dvh;
+  min-height: 100dvh;
+  overflow: hidden;
+}
+.production-kiosk .kiosk-header {
+  flex: none;
+  height: clamp(60px, 10vh, 148px);
+}
+.production-kiosk .kiosk-header .brand-logo {
+  width: clamp(76px, min(11vw, 15vh), 190px);
+}
+.production-kiosk .kiosk-header .brand strong {
+  font-size: clamp(15px, min(1.9vw, 2.6vh), 28px);
+}
+.production-kiosk .kiosk-header .brand small {
+  font-size: clamp(8px, 1.2vh, 11px);
+}
+/* Si algún estado excepcional no cupiera, se desplaza esta zona y nunca la
+   página entera: la cabecera y el pie siempre quedan a la vista. */
+.production-kiosk .kiosk-shell {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: auto;
+  padding: clamp(10px, 2.4vh, 40px) 0 clamp(6px, 1.6vh, 28px);
+}
+.production-kiosk .kiosk-footer {
+  flex: none;
+  padding: clamp(6px, 1.4vh, 20px) clamp(16px, 5vw, 72px);
+  font-size: clamp(9px, 1.2vh, 11px);
+}
+.terminal-heading .eyebrow {
+  font-size: clamp(9px, 1.2vh, 11px);
+}
+.terminal-heading h1 {
+  font-size: clamp(19px, min(2.6vw, 4vh), 34px);
+}
+.terminal-method {
+  font-size: clamp(10px, 1.5vh, 13px);
+}
+.terminal-clock {
+  margin: clamp(10px, 2.6vh, 28px) 0;
+  padding: clamp(10px, 2.2vh, 22px);
+}
+.terminal-date {
+  font-size: clamp(10px, 1.6vh, 14px);
+}
+.terminal-clock time {
+  font-size: clamp(30px, min(7vw, 11vh), 72px);
+}
+.terminal-actions {
+  gap: clamp(9px, 1.8vw, 22px);
+}
+.terminal-action {
+  padding: clamp(12px, 2.4vh, 27px) clamp(14px, 2.2vw, 30px) 0;
+  border-radius: clamp(13px, 2vh, 22px);
+}
+.terminal-action-top {
+  margin-bottom: clamp(8px, 2.2vh, 24px);
+}
+.terminal-action-icon {
+  width: clamp(34px, min(4vw, 6.4vh), 58px);
+  height: clamp(34px, min(4vw, 6.4vh), 58px);
+  border-radius: clamp(10px, 1.6vh, 17px);
+}
+/* Los iconos vienen con medidas fijas del componente; se ajustan a su caja. */
+.terminal-action-icon svg {
+  width: 58%;
+  height: 58%;
+}
+.terminal-action-top > svg {
+  width: clamp(15px, 2.4vh, 25px);
+  height: auto;
+}
+.terminal-action-bottom svg,
+.terminal-method svg {
+  width: clamp(14px, 2vh, 19px);
+  height: auto;
+}
+.terminal-action-name {
+  font-size: clamp(20px, min(3.2vw, 4.6vh), 40px);
+}
+.terminal-action-detail {
+  font-size: clamp(10px, 1.6vh, 14px);
+  margin-bottom: clamp(10px, 2.4vh, 27px);
+}
+.terminal-action-bottom {
+  padding: clamp(8px, 1.6vh, 18px) 0;
+  font-size: clamp(10px, 1.4vh, 13px);
+}
+.terminal-hint {
+  margin-top: clamp(8px, 2vh, 23px);
+  font-size: clamp(10px, 1.4vh, 13px);
+}
+/* La lista de trabajadores del respaldo por PIN se desplaza dentro de sí misma. */
+.production-kiosk .worker-list {
+  max-height: min(540px, 38vh);
+}
+
+/* Ventanas muy bajas: se recorta el aire, no el contenido. */
+@media (max-height: 500px) {
+  .production-kiosk .kiosk-shell {
+    padding: 6px 0 4px;
+  }
+  .terminal-clock {
+    margin: 7px 0;
+    padding: 7px;
+  }
+  .terminal-action {
+    padding-top: 10px;
+  }
+  .terminal-action-top {
+    margin-bottom: 6px;
+  }
+  .terminal-action-detail {
+    margin-bottom: 7px;
+  }
+  .terminal-action-bottom {
+    padding: 6px 0;
+  }
+  .terminal-hint {
+    margin-top: 5px;
+  }
+  .production-kiosk .kiosk-footer {
+    padding: 4px clamp(16px, 5vw, 72px);
+  }
+}
+
+/* Extremo: ventanas de menos de 400 px de alto. Todo sigue visible, más junto. */
+@media (max-height: 400px) {
+  .production-kiosk .kiosk-header {
+    height: 50px;
+  }
+  .production-kiosk .kiosk-shell {
+    padding: 4px 0 2px;
+  }
+  .terminal-clock {
+    margin: 5px 0;
+    padding: 5px;
+  }
+  .terminal-action {
+    padding-top: 8px;
+  }
+  .terminal-action-top {
+    margin-bottom: 4px;
+  }
+  .terminal-action-detail {
+    margin-bottom: 5px;
+  }
+  .terminal-action-bottom {
+    padding: 4px 0;
+  }
+  .terminal-hint {
+    margin-top: 3px;
+  }
+  .production-kiosk .kiosk-footer {
+    padding: 2px clamp(16px, 5vw, 72px);
+  }
+}

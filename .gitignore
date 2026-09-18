@@ -1,0 +1,86 @@
+# Dependencias
+node_modules/
+
+# Compilados y artefactos de build
+dist/
+dist-server/
+build/
+*.tsbuildinfo
+output/
+tmp/
+
+# Datos de operación. runtime/ guarda bases, respaldos y paquetes reales:
+# nunca debe versionarse nada de aquí salvo el marcador de carpeta.
+runtime/*
+!runtime/.gitkeep
+
+# Bases de datos y respaldos, en cualquier ubicación
+*.sqlite
+*.sqlite3
+*.sqlite-wal
+*.sqlite-shm
+*.db
+*.db-journal
+*.dump
+backups/
+**/backups/
+
+# Paquetes de distribución e imágenes exportadas
+*.zip
+*.tar
+*.tar.gz
+*.7z
+
+# Secretos y configuración local
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+config.local.*
+credentials.local.*
+secrets.local.*
+
+# Registros
+*.log
+logs/
+
+# Cachés de Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# Cachés de Node y cobertura
+.npm/
+.vite/
+coverage/
+test-results/
+.eslintcache
+
+# Pesos de computer vision: se provisionan con scripts/prepare-models.py desde
+# las fuentes fijadas en face-service/models/manifest.json y se verifican por
+# SHA-256. Nunca entran a la historia Git. El manifiesto, las licencias y el
+# script sí se versionan.
+face-service/models/*.onnx
+face-service/models/*.task
+face-service/models/*.tflite
+face-service/models/*.pb
+!face-service/models/manifest.json
+!face-service/models/*-LICENSE.txt
+
+# Fixtures generados localmente por el motor facial
+face-service/tests/fixtures/
+
+# Sistema operativo y editores
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+*.swp

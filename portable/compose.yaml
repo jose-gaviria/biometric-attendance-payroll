@@ -1,0 +1,38 @@
+name: registro-de-entradas
+services:
+  registro-de-entradas:
+    image: biometric-attendance-payroll:1.0.0
+    container_name: registro-de-entradas
+    restart: unless-stopped
+    stop_grace_period: 45s
+    # El registro no puede crecer sin limite y llenar el disco con los anios.
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+    # Por defecto todo sigue en 127.0.0.1, igual que antes. Para permitir
+    # Administración desde otras PC de la misma red, definir LAN_BIND (la
+    # propia IP de este equipo, ej. 192.168.1.50) y LAN_ORIGIN (el origen
+    # exacto que usará el navegador remoto, ej. http://192.168.1.50:8080)
+    # antes de levantar el contenedor. 8091 (laboratorio facial) se queda
+    # siempre solo en este equipo: la cámara del kiosco exige localhost.
+    ports:
+      - "${LAN_BIND:-127.0.0.1}:8080:3001"
+      - "127.0.0.1:8091:8081"
+    environment:
+      LAN_ORIGIN: ${LAN_ORIGIN:-}
+    volumes:
+      - data:/data
+    read_only: true
+    tmpfs:
+      - /tmp:size=128m,mode=1777
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    mem_limit: 2g
+    cpus: 3
+volumes:
+  data:
+    external: true
+    name: biometric-attendance-payroll-data
+

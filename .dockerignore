@@ -1,0 +1,10 @@
+node_modules
+.git
+.env
+runtime
+test-results
+*.tar
+turnos-app/node_modules
+turnos-app/dist
+turnos-app/dist-server
+**/__pycache__

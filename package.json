@@ -1,0 +1,39 @@
+{
+  "name": "biometric-attendance-payroll",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "dev:api": "tsx watch server/index.ts",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint server client scripts --ext .ts,.tsx",
+    "build": "npm run typecheck && vite build && tsc -p tsconfig.server.json",
+    "start": "node dist/server/server/index.js",
+    "test": "tsx --test server/*.test.ts",
+    "calibrate": "tsx scripts/calibrate-face-threshold.ts"
+  },
+  "dependencies": {
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "express": "5.2.1",
+    "better-sqlite3": "13.0.3",
+    "bcryptjs": "3.0.3",
+    "zod": "4.5.4",
+    "helmet": "8.3.0",
+    "express-rate-limit": "8.7.0"
+  },
+  "devDependencies": {
+    "vite": "8.2.2",
+    "typescript": "6.0.3",
+    "tsx": "4.23.13",
+    "@types/node": "26.5.0",
+    "@types/react": "19.2.18",
+    "@types/react-dom": "19.2.7",
+    "@types/express": "5.0.6",
+    "@types/better-sqlite3": "9.6.0",
+    "eslint": "10.10.0",
+    "typescript-eslint": "8.70.0",
+    "@eslint/js": "10.0.1"
+  }
+}
